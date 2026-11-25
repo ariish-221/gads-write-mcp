@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gads-write-mcp"
+version = "0.1.0"
+description = "Guarded write access to the Google Ads API over MCP: plan, validate, approve, apply."
+requires-python = ">=3.10"
+dependencies = [
+    "google-ads>=32,<33",
+    "mcp>=2.2,<3",
+    "requests>=2.31",
+]
+
+[project.scripts]
+gads-write-mcp = "gads_write_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
